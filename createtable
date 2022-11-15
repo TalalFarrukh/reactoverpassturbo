@@ -1,0 +1,17 @@
+-- Table: public.roads
+
+-- DROP TABLE IF EXISTS public.roads;
+
+CREATE TABLE IF NOT EXISTS public.roads
+(
+    id integer NOT NULL DEFAULT nextval('roads_id_seq'::regclass),
+    way_id character varying COLLATE pg_catalog."default",
+    geometry geometry(Geometry,4326),
+    group_id integer,
+    type character varying COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.roads
+    OWNER to postgres;
